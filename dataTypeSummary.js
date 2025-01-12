@@ -71,7 +71,9 @@ ______________________________________________________________
 
 
 Q2. Is Js is dynamic or static type language ?
-Js is a dynamically typed language because datatype will automatically assigned at the time of compilation or code execution
+Js is a dynamically typed language because datatype will automatically assigned at the time of compilation or code execution.
+
+you don't need to specify the data type of a variable when you declare it.
 */
 
 
@@ -85,7 +87,7 @@ let userEmail;
 
 const id=Symbol('1234')
 const anotherId=Symbol('1234')
-console.log(id === anotherId) // false
+// console.log(id === anotherId) // false
 
 const bigNumber = 12345645n
 // console.log(typeof BigInt) //function
@@ -96,7 +98,39 @@ const bigNumber = 12345645n
 // console.log(typeof outsideTemp) //object
 // console.log(typeof userEmail) //undefined
 
-const myFunction = function(){
-    console.log("Hello World!");
+// const myFunction = function(){
+//     console.log("Hello World!");
+// }
+// console.log(typeof myFunction) //function(object's fubction)
+
+
+// _________________________________________________________________________________________________________________
+
+//datatypes are based on memory allocation
+/* Primitive datatypes->  
+call by value (string,number,boolean,null,undefined,BigInt,symbol) ->Stack memory
+
+Reference/Non primitive data types -> 
+call by reference ( array,object, function) -> heap memory
+*/
+
+// Stack(Primitive Datatype) Memory -> jo bhi variable hum store kiye h humko usko copy milta ha 
+// Heap(Non-Primitive Datatype) Memory -> yaha se reference value milta ha mtlb original value milta ha
+
+let myYoutube="abc"
+
+let anothername=myYoutube
+anothername="xyz"
+
+console.log(myYoutube);
+console.log(anothername);
+
+let userOne={
+    email:"user@gamil.com",
+    upi:"user@axi" 
 }
-console.log(typeof myFunction) //function(object's fubction)
+let userTwo=userOne
+userTwo.email="abc@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
